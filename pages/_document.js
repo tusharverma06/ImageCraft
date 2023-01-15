@@ -8,7 +8,7 @@ export default function Document() {
         <meta property="og:title" content="Image craft" key="title" />
         <meta
           property="og:description"
-          content="build with buildspace"
+          content=" Turn me into any character in any universe with your own prompts"
           key="description"
         />
         <meta name="twitter:card" content="summary_large_image"></meta>
