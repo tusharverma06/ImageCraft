@@ -1,44 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
-
+@font-face {
+    font-family: 'satoshi';
+    src: url(/pages/satoshi.css);
+}
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'satoshi';
+    background-color: black;
 }
 
-.root {
-    display: flex;
-    place-content: center flex-start;
-    align-items: center;
-    background-color: rgb(0, 0, 0);
-    flex-flow: column nowrap;
-    gap: 10px;
-    height: 100vh;
-    overflow: auto;
-    padding: 0px;
-    position: relative;
-}
+
 
 .container {
-    display: flex;
-    flex: 0 0 auto;
-    flex-flow: row nowrap;
-    gap: 10px;
+    
     /* height: fit-content; */
     height: 100%;
-    overflow: auto;
     position: relative;
-    width: auto;
+    width: 700px;
     gap: 64px;
+margin: 4rem auto;
+padding:  0;
 }
 
 .header {
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
     justify-content: center;
-    color: #FFF
+    color: #FFF;
+
 }
 
 .header-title {
@@ -55,13 +47,21 @@ body {
     text-align: center;
     margin: 0;
 }
-
+.header-subtitle{
+    width: 87%;
+    margin-top: 1.6rem;
+    text-align: center;
+}
 .header-subtitle h2 {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.4em;
     color: rgba(255, 255, 255, 0.75);
+}
+.header-subtitle p{
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.2rem;
 }
 
 .prompt-container {
@@ -94,7 +94,7 @@ body {
     overflow: hidden;
     padding: 20px;
     position: relative;
-    width: 610px;
+    width: 600px;
     max-width: 1200px;
     will-change: transform;
     overflow: auto;
@@ -122,8 +122,7 @@ body {
 
 .prompt-buttons {
     display: flex;
-    place-content: center;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
     flex: 0 0 auto;
     flex-flow: row nowrap;
@@ -131,29 +130,59 @@ body {
     height: min-content;
     overflow: hidden;
     padding: 0px;
-    position: relative;
     width: 100%;
+    margin-right: 2px;
 }
 
 .generate-button {
-    place-content: flex-start;
-    align-items: flex-start;
-    background-color: #F32E98;
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
+    justify-content: flex-start;
+
     flex-flow: column nowrap;
     gap: 10px;
     height: min-content;
     overflow: hidden;
-    padding: 16px 24px;
+    padding: 16px;
     position: relative;
     text-decoration: none;
     width: min-content;
     will-change: transform;
     cursor: pointer;
 }
+.contain{
+    position: absolute;
+    top: 110%;
+    right: 5%;
+display: flex;
+margin-right: 0;
+margin-left: 20%;
+gap: 20px;
+align-items: center;
+justify-content: space-evenly;
+place-content: start space-around;
+border: 2px solid white;
 
+}
+.maintain{
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-evenly;
+margin-right: -60%;
+}
+.contain .btn{
+width: 120px;
+padding: 16px 24px;
+display: inline-flex;
+}
+.contan>button{
+    padding: 16px 24px;
+    width: auto;
+    background-color: #00fffb;
+}
 .generate {
     outline: none;
     display: flex;
@@ -208,18 +237,13 @@ body {
 .badge {
     display: flex;
     align-items: center;
+gap: 10px;
 }
 
 .badge img {
     width: 21px;
-    height: 17px;
-    image-rendering: pixelated;
-    flex-shrink: 0;
-    fill: black;
-    color: black;
-    transform: none;
-    transform-origin: 50% 50% 0px;
-    padding-right: 5px;
+    border-radius: 20px;
+    
 }
 
 .badge p {
@@ -236,16 +260,15 @@ body {
 
 .output-content {
     width: 512px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    flex-shrink: 0;
     transform: none;
+    margin: 4rem auto;
+    
 }
 
 .output-content img {
     border-radius: 16px;
+    display: block;
+margin: 0 auto;
 }
 
 .output-content p {
@@ -253,20 +276,33 @@ body {
     font-weight: bold;
     white-space: pre-line;
     color: white;
+    width: 512px;
+    margin: 2rem auto;
+}
+.exampleImage{
+    margin: 6rem auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+gap: 5%;
+}
+.exampleImage>img{
+    width: 20%;
+
+    height: 20%;
+    border-radius: 20px;
 }
 
 @media (max-width: 1200px) {
     .container {
-        flex-direction: column;
-        justify-content: center;
         max-width: 700px;
-        width: 100%;
-        padding: 50px;
+        width: 90%;
     }
 
     .prompt-container {
         max-width: 600px;
-        width: 100%;
+        width: 50%;
     }
 
     .output-content {
@@ -274,9 +310,30 @@ body {
         height: 512px;
         align-items: center;
     }
+ 
+.header-subtitle h2{
+    width: auto;
+text-align: center;
 }
-
-@media (max-width: 809px) and (max-width: 600px) {
+}
+@media (min-width: 965px) and (max-width: 1200px){
+    .maintain{
+        margin-right: -152%;
+        margin-left: -2%;
+     }
+     .prompt-box{
+        width: 900px;
+    }
+}
+@media (min-width: 809px) and (max-width: 965px){
+    .prompt-box{
+        width: 760px;
+    }
+    .maintain{
+        margin-right: -100%;;
+    }
+}
+@media (max-width: 809px) and (min-width: 600px) {
     .container {
         max-width: 550px;
         width: 100%;
@@ -290,21 +347,124 @@ body {
         text-align: center;
     }
 
-    .prompt-buttons {
-        justify-content: center;
-    }
-
+    
     .prompt-container {
         max-width: 400px;
         width: 100%;
     }
 
     .prompt-box {
-        width: 100%;
+width: 500px;
     }
+    .output-content img{
+        width: 512px;
+        height: 512px;
+    }
+   .maintain{
+    width: 100%;
+margin: auto;
+margin-right: -26%;
+gap: 2px;
 }
+   .maintain>button{
+    width: auto;
+    padding:14px 20px;
+   }
+}
+@media (min-width: 440px) and (max-width: 600px){
+   
+   .container{
+    width: 500px;
+    margin: 4rem auto;
+   }
+   .prompt-box{
+    max-width: 180%;;
+   }
+   .output-content img{
+    width: 430px;
+    height: 430px;
+   }
+   .output-content p{
+    width: 430px;
+   }
 
+   .maintain{
+    width: 100%;
+    
+   }
+}
+@media (max-width: 440px){
+    .prompt-box{
+        width: 180%;
+    }
+    .contain{
+        margin-right: 48%;
 
+    }
+    .exampleImage{
+        margin-top: 10px;
+    }
+    .output-content img{
+        max-width: 400px;
+        max-height: 400px;
+        width:100%;
+        height: 100%;
+        display: block;
+        margin: 1rem auto;
+    
+    }
+    .output-content{
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        margin: 80px auto 0 auto;
+ height: 300px;
+    }
+    .output-content p{
+        width: 250px;
+       }
+   .maintain{
+    width: 100%;
+    margin: auto;
+    /* margin-right: -16%; */
+   }
+.maintain>button{
+    padding: 16px;
+}
+}
+@media (max-width: 330px){
+    .output-content img{
+        width: 250px;
+        height: 250px;
+    }
+
+.maintain{
+    max-width: 330px;
+    width: 90%;
+    margin: 10px auto;
+    gap: 10px;
+
+}
+.maintain button{
+    width: auto;
+display: inline-grid;
+
+}
+.header-subtitle{
+    margin: auto;
+    width: 100%;
+}
+}
+@media (min-width: 1200px){
+   
+.container{
+    margin: 4rem auto;
+    width: auto;
+    
+}
+.prompt-box{
+    width: 1100px;
+}
+}
 
 /* Loading ring animation */
 .loader {
@@ -327,3 +487,227 @@ body {
         transform: rotate(360deg);
     }
 }
+
+.btn {
+    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+    --border-width: .125em;
+    --curve-size: .5em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: #ffffff;
+    color: var(--color);
+      /* use position: relative; so that BG is only for .btn */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    width: 370px;
+    place-content: center;
+    font-size: 17px;
+    border: 0;
+     margin:1rem 10px 0 140%;
+ cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+    clip-path: polygon(
+              /* Top-left */
+              0% var(--curve-size),
+  
+              var(--curve-size) 0,
+              /* top-right */
+              100% 0,
+              100% calc(100% - var(--curve-size)),
+  
+              /* bottom-right 1 */
+              calc(100% - var(--curve-size)) 100%,
+              /* bottom-right 2 */
+              0 100%);
+    transition: color 250ms;
+  }
+  
+  .btn::after,
+  .btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  
+  .btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+  }
+  
+  @keyframes move-bg7234 {
+    0% {
+      background-position: 31% 0%
+    }
+  
+    50% {
+      background-position: 70% 100%
+    }
+  
+    100% {
+      background-position: 31% 0%
+    }
+  }
+  
+  .btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+              /* Top-left */
+              var(--border-width) 
+              calc(var(--curve-size) + var(--border-width) * .5),
+  
+              calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+  
+              /* top-right */
+              calc(100% - var(--border-width)) 
+              var(--border-width),
+  
+              calc(100% - var(--border-width)) 
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+  
+              /* bottom-right 1 */
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+              /* bottom-right 2 */
+              var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+  }
+  
+  .btn:where(:hover, :focus)::after {
+    clip-path: polygon(
+                  /* Top-left */
+                  calc(100% - var(--border-width)) 
+  
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      
+                  calc(100% - var(--border-width))
+  
+                  var(--border-width),
+      
+                  /* top-right */
+                  calc(100% - var(--border-width))
+  
+                   var(--border-width),
+      
+                  calc(100% - var(--border-width)) 
+  
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+      
+                  /* bottom-right 1 */
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) 
+                  calc(100% - var(--border-width)),
+  
+                  /* bottom-right 2 */
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+                  calc(100% - var(--border-width)));
+    transition: 200ms;
+  }
+  
+  .btn:where(:hover, :focus) {
+    color: #fff;
+  }
+
+  .random_btn{
+   
+    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+    --border-width: .125em;
+    --curve-size: .5em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: #ffffff;
+    color: var(--color);
+      /* use position: relative; so that BG is only for .btn */
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    gap: 5px;
+    width: 200px;
+    place-content: center;
+    font-size: 17px;
+    border: 0;
+    padding: 16px 20px;
+     
+ cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+    clip-path: polygon(
+              /* Top-left */
+              0% var(--curve-size),
+  
+              var(--curve-size) 0,
+              /* top-right */
+              100% 0,
+              100% calc(100% - var(--curve-size)),
+  
+              /* bottom-right 1 */
+              calc(100% - var(--curve-size)) 100%,
+              /* bottom-right 2 */
+              0 100%);
+    transition: color 250ms; 
+  }
+  .random_btn::after, .random_btn::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .random_btn::before{
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2; 
+  }
+  .random_btn::after{
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+              /* Top-left */
+              var(--border-width) 
+              calc(var(--curve-size) + var(--border-width) * .5),
+  
+              calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+  
+              /* top-right */
+              calc(100% - var(--border-width)) 
+              var(--border-width),
+  
+              calc(100% - var(--border-width)) 
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+  
+              /* bottom-right 1 */
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+              /* bottom-right 2 */
+              var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms; 
+  }
+  .random_btn:where(:hover, :focus)::after{
+    clip-path: polygon(
+                  /* Top-left */
+                  calc(100% - var(--border-width)) 
+  
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      
+                  calc(100% - var(--border-width))
+  
+                  var(--border-width),
+      
+                  /* top-right */
+                  calc(100% - var(--border-width))
+  
+                   var(--border-width),
+      
+                  calc(100% - var(--border-width)) 
+  
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+      
+                  /* bottom-right 1 */
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) 
+                  calc(100% - var(--border-width)),
+  
+                  /* bottom-right 2 */
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+                  calc(100% - var(--border-width)));
+    transition: 200ms; 
+  }
