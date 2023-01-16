@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta property='og:image' content='https://icon-library.com/images/ai-icon/ai-icon-7.jpg' />
+        <meta property='og:image' content='https://i.ibb.co/x5gNBgH/OGIMAGE.png' />
         <meta property="og:title" content="Image craft" key="title" />
         <meta
           property="og:description"
